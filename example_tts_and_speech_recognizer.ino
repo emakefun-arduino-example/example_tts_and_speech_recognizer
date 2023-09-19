@@ -55,8 +55,7 @@ void loop() {
     case SpeechRecognizer::kEventRecognizeTimeout: {
       // 小易小易唤醒后，如果超时未识别到新的指令，则播报"有需要再叫我"
       Serial.println(F("kEventStartRecognizing"));
-      g_text_to_speech_synthesizer.StartSynthesizing(F("有需要再叫我"),
-                                                     TextToSpeechSynthesizer::TextEncodingType::kTextEncodingTypeUtf8);
+      g_text_to_speech_synthesizer.StartSynthesizing(F("有需要再叫我"), TextToSpeechSynthesizer::kTextEncodingTypeUtf8);
       break;
     }
     default:
